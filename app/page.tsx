@@ -4,7 +4,14 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4">
+    <main className="flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
+      style={{
+        paddingTop: "calc(8px + var(--safe-area-inset-top))",
+        paddingBottom: "calc(8px + var(--safe-area-inset-bottom))",
+        paddingLeft: "calc(8px + var(--safe-area-inset-left))",
+        paddingRight: "calc(8px + var(--safe-area-inset-right))"
+      }}
+    >
       <Image alt="logo" src={Logo} width={300} height={300} className="drop-shadow-lg mb-4 w-40 min-[390px]:w-60"/>
       <div className="w-min mt-[-30px] text-center leading-[1.9rem] min-[390px]:leading-[2.5rem] tracking-tight text-4xl	min-[390px]:text-5xl font-extrabold text-vip-1">
         DRIVER PROTECTION
