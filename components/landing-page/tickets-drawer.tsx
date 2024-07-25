@@ -24,7 +24,8 @@ import {
 } from "@/components/ui/drawer";
 import Image from "next/image";
 import SnapIcon from "@/public/snap-photo.svg";
-
+import TextusIcon from "@/public/textus-photo.svg"
+import DoneIcon from "@/public/done-photo.svg"
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -98,11 +99,11 @@ export function DrawerDialogDemo() {
 
               <div className="step-2 flex flex-col items-center flex-1 w-full">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                  Send it
+                  Text us
                 </h4>
                 <Image
                   alt="take a picture of your traffic ticket"
-                  src={SnapIcon}
+                  src={TextusIcon}
                   width={60}
                   height={60}
                   className="m-auto"
@@ -115,7 +116,7 @@ export function DrawerDialogDemo() {
                 </h4>
                 <Image
                   alt="take a picture of your traffic ticket"
-                  src={SnapIcon}
+                  src={DoneIcon}
                   width={60}
                   height={60}
                   className="m-auto"
@@ -132,7 +133,7 @@ export function DrawerDialogDemo() {
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button onClick={handleTextClick}>Call / Text Us</Button>
+          <Button onClick={handleTextClick}>Text us your traffic ticket</Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>

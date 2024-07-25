@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import {DrawerDialogDemo} from "@/components/landing-page/tickets-drawer"
-
+import { AccidentsDrawerDialog } from "@/components/landing-page/accidents-drawer";
 export default function Home() {
   return (
     <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
@@ -35,9 +35,7 @@ export default function Home() {
 
         <DrawerDialogDemo />
 
-        <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 w-22 w-full max-w-screen-sm text-center rounded-full">
-          Accidents
-        </div>
+        <AccidentsDrawerDialog />
 
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 w-22 w-full max-w-screen-sm text-center rounded-full">
           DUI
