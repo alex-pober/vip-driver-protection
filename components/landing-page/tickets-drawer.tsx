@@ -33,16 +33,16 @@ export function DrawerDialogDemo() {
     if (navigator.share) {
       try {
         await navigator.share({
-          text: 'Hello, I need assistance with...',
-          url: 'sms:+1234567890'
+          text: 'Hello, Please take a look at my traffic ticket and get back to me.',
+          url: 'sms:+18189307774'
         });
         console.log('Shared successfully');
       } catch (error) {
         console.error('Sharing failed:', error);
-        window.open('sms:+1234567890?&body=Hello, I need assistance with...');
+        window.open('sms:+18189307774?&body=Hello, Please take a look at my traffic ticket and get back to me.');
       }
     } else {
-      window.open('sms:+1234567890?&body=Hello, I need assistance with...');
+      window.open('sms:+18189307774?&body=Hello, Please take a look at my traffic ticket and get back to me.');
     }
   };
 
