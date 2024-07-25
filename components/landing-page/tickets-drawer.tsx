@@ -44,7 +44,7 @@ export function DrawerDialogDemo() {
               Make changes to your profile here. Click save when you're done.
             </DialogDescription>
           </DialogHeader>
-          <ProfileForm />
+
         </DialogContent>
       </Dialog>
     )
@@ -103,19 +103,5 @@ export function DrawerDialogDemo() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
-}
-
-function ProfileForm({ className }) {
-  return (
-    <form className={cn("grid items-start gap-4", className)}>
-      <div className="grid gap-2">
-        EMAIL
-      </div>
-      <div className="grid gap-2">
-        USERNAME
-      </div>
-
-    </form>
   )
 }
