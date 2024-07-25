@@ -80,7 +80,7 @@ export function AccidentsDrawerDialog() {
                 <h4 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">
                   02: Move to Safety
                 </h4>
-                <p>If it's safe, move your vehicle to the side to avoid further accidents.</p>
+                <p>If it&apos;s safe, move your vehicle to the side to avoid further accidents.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
