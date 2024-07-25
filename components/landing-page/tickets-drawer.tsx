@@ -1,9 +1,9 @@
-'use client'
-import * as React from "react"
+"use client";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -21,13 +21,13 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import Image from "next/image"
-import SnapIcon from "@/public/snap-photo.svg"
+} from "@/components/ui/drawer";
+import Image from "next/image";
+import SnapIcon from "@/public/snap-photo.svg";
 
 export function DrawerDialogDemo() {
-  const [open, setOpen] = React.useState(false)
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const [open, setOpen] = React.useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   if (isDesktop) {
     return (
@@ -41,13 +41,12 @@ export function DrawerDialogDemo() {
           <DialogHeader>
             <DialogTitle>Edit profile</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you're done.
+              Make changes to your profile here. Click save when you&rsquo;re done.
             </DialogDescription>
           </DialogHeader>
-
         </DialogContent>
       </Dialog>
-    )
+    );
   }
 
   return (
@@ -61,47 +60,67 @@ export function DrawerDialogDemo() {
         <DrawerHeader className="text-left">
           <DrawerTitle>Traffic Ticket Defenese</DrawerTitle>
           <DrawerDescription>
-            <span>Fight your traffic tickets keep your driving record clean. Dont just settle for a point, fight it!</span>
+            <span>
+              Fight your traffic tickets keep your driving record clean. Dont
+              just settle for a point, fight it!
+            </span>
 
             <div className="3-steps flex flex-row gap-2 mt-4 mb-4">
               <div className="step-1 flex flex-col items-center flex-1 w-full">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Snap Photo
                 </h4>
-                <Image alt="take a picture of your traffic ticket" src={SnapIcon} width={60} height={60} className="m-auto"/>
+                <Image
+                  alt="take a picture of your traffic ticket"
+                  src={SnapIcon}
+                  width={60}
+                  height={60}
+                  className="m-auto"
+                />
               </div>
 
               <div className="step-2 flex flex-col items-center flex-1 w-full">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Send it
                 </h4>
-                <Image alt="take a picture of your traffic ticket" src={SnapIcon} width={60} height={60} className="m-auto"/>
+                <Image
+                  alt="take a picture of your traffic ticket"
+                  src={SnapIcon}
+                  width={60}
+                  height={60}
+                  className="m-auto"
+                />
               </div>
 
               <div className="step-3 flex flex-col items-center flex-1 w-full">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Done
                 </h4>
-                <Image alt="take a picture of your traffic ticket" src={SnapIcon} width={60} height={60} className="m-auto"/>
+                <Image
+                  alt="take a picture of your traffic ticket"
+                  src={SnapIcon}
+                  width={60}
+                  height={60}
+                  className="m-auto"
+                />
               </div>
             </div>
 
             <span>
-            After receiving your ticket, our experienced lawyers will review it and get in touch with you promptly.
-            You can then sit back and relax while we take care of everything for you.
+              After receiving your ticket, our experienced lawyers will review
+              it and get in touch with you promptly. You can then sit back and
+              relax while we take care of everything for you.
             </span>
-
           </DrawerDescription>
         </DrawerHeader>
 
-
         <DrawerFooter>
-            <Button>Call / Text Us</Button>
+          <Button>Call / Text Us</Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }
