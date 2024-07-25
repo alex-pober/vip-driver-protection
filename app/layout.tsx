@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "VIP Driver Protection",
-  description: "All your car services in one place.",
+  description: "You and your car protected by top lawyers.",
 };
 
 export default function RootLayout({
@@ -15,9 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <html lang="en" className="bg-[#749BAE]">
-      <html lang="en" className="bg-vip-3">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body className={cn(`${inter.className} bg-vip-3`)}>{children}</body>
     </html>
   );
 }
