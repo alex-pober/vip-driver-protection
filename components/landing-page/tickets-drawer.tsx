@@ -29,16 +29,20 @@ export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const handleTextClick = () => {
+  const handleTextClick = async () => {
     if (navigator.share) {
-      navigator.share({
-        text: 'Hello, I want to fight my ticket!',
-        url: 'sms:+18189307774'
-      })
-      .then(() => console.log('Shared successfully'))
-      .catch((error) => console.error('Sharing failed:', error));
+      try {
+        await navigator.share({
+          text: 'Hello, I need assistance with...',
+          url: 'sms:+1234567890'
+        });
+        console.log('Shared successfully');
+      } catch (error) {
+        console.error('Sharing failed:', error);
+        window.open('sms:+1234567890?&body=Hello, I need assistance with...');
+      }
     } else {
-      window.open('sms:+18189307774?&body=Hello, I want to fight my ticket!');
+      window.open('sms:+1234567890?&body=Hello, I need assistance with...');
     }
   };
 
