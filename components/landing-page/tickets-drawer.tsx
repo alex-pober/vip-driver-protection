@@ -29,6 +29,19 @@ export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
+  const handleTextClick = () => {
+    if (navigator.share) {
+      navigator.share({
+        text: 'Hello, I want to fight my ticket!',
+        url: 'sms:+18189307774'
+      })
+      .then(() => console.log('Shared successfully'))
+      .catch((error) => console.error('Sharing failed:', error));
+    } else {
+      window.open('sms:+18189307774?&body=Hello, I want to fight my ticket!');
+    }
+  };
+
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
@@ -115,7 +128,7 @@ export function DrawerDialogDemo() {
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button>Call / Text Us</Button>
+          <Button onClick={handleTextClick}>Call / Text Us</Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>
