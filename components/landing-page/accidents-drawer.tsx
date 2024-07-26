@@ -69,7 +69,7 @@ export function AccidentsDrawerDialog() {
           </DrawerTitle>
           <DrawerDescription className="overflow-scroll">
 
-            <div className="7-steps flex flex-col gap-5 mt-2 mb-4 pb-0 max-h-[60lvh]">
+            <div className="7-steps flex flex-col gap-5 mt-2 mb-4 pb-0 max-h-[55lvh]">
               <div className="step-1 flex flex-col  flex-1 w-full">
                 <span>Step 1</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
