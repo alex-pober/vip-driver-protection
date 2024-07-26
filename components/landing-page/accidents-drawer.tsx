@@ -171,7 +171,7 @@ export function AccidentsDrawerDialog() {
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
                   Call US, The Lawyers.
                 </h4>
-                <p>(818) 731-8922 or tap the "call us" button below</p>
+                <p>(818) 731-8922 or tap the &quot;call us&quot; button below</p>
               </div>
 
               {/* <span>
