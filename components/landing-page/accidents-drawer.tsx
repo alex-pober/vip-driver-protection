@@ -71,93 +71,107 @@ export function AccidentsDrawerDialog() {
 
             <div className="7-steps flex flex-col gap-5 mt-2 mb-4 pb-0 max-h-[60lvh]">
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 1</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  01: Ensure Safety First
+                  Ensure Safety First
                 </h4>
                 <p>Check for injuries and call 911 immediately if needed.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 2</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  02: Move to Safety
+                  Move to Safety
                 </h4>
                 <p>If it&apos;s safe, move your vehicle to the side to avoid further accidents.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 3</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  03: Stay Visible
+                  Stay Visible
                 </h4>
                 <p>Turn on your hazard lights to alert other drivers.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 4</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  04: Call for Help
+                  Call for Help
                 </h4>
                 <p>Contact the police to report the accident, no matter how minor.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 5</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  05: Exchange Info
+                  Exchange Info
                 </h4>
                 <p>Swap contact and insurance details with the other driver(s).</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 6</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  06: Capture the Scene
+                  Capture the Scene
                 </h4>
                 <p>Take photos of the accident scene, vehicle damage, and license plates.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 7</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  07: Stay Neutral
+                  Stay Neutral
                 </h4>
                 <p>Avoid admitting fault or discussing the accident details on the spot.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 8</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  08: Gather Witness
+                  Gather Witness
                 </h4>
                 <p>Collect contact information and statements from any witnesses.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 9</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  09: File a Report
+                  File a Report
                 </h4>
                 <p>Ensure a police report is filed for official documentation.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 10</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  10: Notify your Insurance
+                  Notify your Insurance
                 </h4>
                 <p>Report the accident to your insurance company right away.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 11</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  11: Seek Medical Attention
+                  Seek Medical Attention
                 </h4>
                 <p>Get a medical check-up, even if you feel fine.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 12</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  12: Keep All Records
+                  Keep All Records
                 </h4>
                 <p>Save all documents related to the accident for your records.</p>
               </div>
 
               <div className="step-1 flex flex-col  flex-1 w-full">
+                <span>Step 13</span>
                 <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  13: Call US, The Lawyers.
+                  Call US, The Lawyers.
                 </h4>
+                <p>(818) 731-8922 or tap the "call us" button below</p>
               </div>
 
               {/* <span>
