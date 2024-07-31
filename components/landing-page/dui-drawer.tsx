@@ -32,7 +32,7 @@ export function DUIDrawerDialog() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const handleCallClick = () => {
-    window.open('tel:+18187318922');
+    window.location.href = ('tel:+18187318922');
   };
 
   if (isDesktop) {
