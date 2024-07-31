@@ -64,7 +64,7 @@ export function DUIDrawerDialog() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle className="outline flex flex-col outline-red bg-[#39474f] p-0 m-[-1rem]">
+          <DrawerTitle className="rounded-xl flex flex-col bg-[#39474f] p-0 m-[-1rem]">
             <div className="flex flex-row items-center">
               <h2 className="min-[374px]:text-lg text-white p-5 pr-0 scroll-m-20 text-xl font-semibold tracking-tight">DUI Defenese by:</h2>
               <Image src={WallinLogo} alt="logo" objectFit={'contain'} className="w-56 h-16 p-2" />
