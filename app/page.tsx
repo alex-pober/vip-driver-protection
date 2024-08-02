@@ -7,7 +7,7 @@ import { DUIDrawerDialog } from "@/components/landing-page/dui-drawer";
 import { LemonLawDrawerDialog } from "@/components/landing-page/lemonlaw-drawer";
 export default function Home() {
   return (
-    <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4 border boder-red"
+    <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
       style={{
         paddingTop: "calc(8px + var(--safe-area-inset-top))",
         paddingBottom: "calc(8px + var(--safe-area-inset-bottom))",
