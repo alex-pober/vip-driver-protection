@@ -27,7 +27,7 @@ import WallinLogo from "@/public/wallinLogo.webp"
 import { Separator } from "@/components/ui/separator"
 
 
-export function DUIDrawerDialog() {
+export function LemonLawDrawerDialog() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -59,48 +59,19 @@ export function DUIDrawerDialog() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-          DUI
+          Lemon Law
         </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle className="rounded-xl flex flex-col bg-[#39474f] p-0 m-[-1rem]">
-            <div className="flex flex-row items-center">
-              <h2 className="min-[374px]:text-lg text-white p-5 pr-0 scroll-m-20 text-xl font-semibold tracking-tight">DUI Defenese by:</h2>
-              <Image src={WallinLogo} alt="logo" objectFit={'contain'} className="w-56 h-16 p-2" />
-            </div>
-              <p className="text-sm text-center text-white divide-y divide-solid py-2 pt-0">
-                In case of being pulled over, remember this.
-              </p>
+          <DrawerTitle className="text-2xl font-bold">
+            Stuck with a lemon?
+            <p className="text-lg text-muted-foreground divide-y divide-solid ">
+              We’ll help you squeeze out a fresh start!</p>
+            <Separator className="my-2" />
           </DrawerTitle>
-          <DrawerDescription className="mt-8 overflow-scroll flex flex-col gap-3">
-
-            <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Stay Calm and Be Polite</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Being respectful goes a long way.</p>
-            </div>
-
-            <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Refuse Field Sobriety Tests</h2>
-              <p className="ml-4 text-sm text-muted-foreground">You are not required to perform these tests.</p>
-            </div>
-
-            <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Take the Chemical Test</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Refusal can lead to automatic license suspension.</p>
-            </div>
-
-            <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Do not admit or make statements of guilt!</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Exercise your right to ramain silent.</p>
-            </div>
-
-            <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Contact an Attorney Immediately</h2>
-              <p className="ml-4 text-sm text-muted-foreground">If arrested dont post bail. You'll probably be released within hours. Call us right after!</p>
-            </div>
-
-
+          <DrawerDescription className="text-muted-foreground">
+            Our expert lemon law attorneys fight for your rights and get you the compensation you deserve.
           </DrawerDescription>
         </DrawerHeader>
 

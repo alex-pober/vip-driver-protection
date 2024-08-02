@@ -4,9 +4,10 @@ import Link from "next/link";
 import {DrawerDialogDemo} from "@/components/landing-page/tickets-drawer"
 import { AccidentsDrawerDialog } from "@/components/landing-page/accidents-drawer";
 import { DUIDrawerDialog } from "@/components/landing-page/dui-drawer";
+import { LemonLawDrawerDialog } from "@/components/landing-page/lemonlaw-drawer";
 export default function Home() {
   return (
-    <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
+    <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4 border boder-red"
       style={{
         paddingTop: "calc(8px + var(--safe-area-inset-top))",
         paddingBottom: "calc(8px + var(--safe-area-inset-bottom))",
@@ -40,9 +41,7 @@ export default function Home() {
 
         <DUIDrawerDialog />
 
-        <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 w-full max-w-screen-sm text-center rounded-full">
-          Lemon Law
-        </div>
+        <LemonLawDrawerDialog />
 
         <div className="text-xl min-[390px]:text-3xl text-vip-5 font-bold p-3 min-w-80 text-center rounded-full">
           (818) VIP - 0606
