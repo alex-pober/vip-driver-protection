@@ -91,7 +91,7 @@ export function DUIDrawerDialog() {
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Do NOT admit or make statements of guilt!</h2>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Do NOT admit / make statements of guilt!</h2>
               <p className="ml-4 text-sm text-muted-foreground">Exercise your right to remain silent.</p>
             </div>
 
