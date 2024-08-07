@@ -23,7 +23,8 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
-import WallinLogo from "@/public/wallinLogo.webp"
+import WallinLogo from "@/public/WallinLogo.svg"
+import DUIimage from "@/public/DUI-image.svg"
 import { Separator } from "@/components/ui/separator"
 
 
@@ -64,7 +65,7 @@ export function DUIDrawerDialog() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle className="rounded-xl flex flex-col bg-[#39474f] p-0 m-[-1rem]">
+          {/* <DrawerTitle className="rounded-xl flex flex-col bg-[#39474f] p-0 m-[-1rem]">
             <div className="flex flex-row items-center">
               <h2 className="min-[374px]:text-lg text-white p-5 pr-0 scroll-m-20 text-xl font-semibold tracking-tight">DUI Defenese by:</h2>
               <Image src={WallinLogo} alt="logo" objectFit={'contain'} className="w-56 h-16 p-2" />
@@ -72,32 +73,39 @@ export function DUIDrawerDialog() {
               <p className="text-sm text-center text-white divide-y divide-solid py-2 pt-0">
                 In case of being pulled over, remember this.
               </p>
+          </DrawerTitle> */}
+          <DrawerTitle className="text-3xl font-bold">
+              Got caught with DUI?
+            <p className="text-lg text-muted-foreground divide-y divide-solid ">
+              In case of being pulled over, remember this.</p>
+            <Separator className="my-2" />
           </DrawerTitle>
           <DrawerDescription className="mt-8 overflow-scroll flex flex-col gap-3">
 
+          <Image className="m-auto" src={DUIimage} width={300} height={100} alt="Best DUI Lawyer"/>
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Stay Calm and Be Polite</h2>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Stay Calm and Be Polite</h2>
               <p className="ml-4 text-sm text-muted-foreground">Being respectful goes a long way.</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Refuse Field Sobriety Tests</h2>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Refuse Field Sobriety Tests</h2>
               <p className="ml-4 text-sm text-muted-foreground">You are not required to perform these tests.</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Take the Chemical Test</h2>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Take the Chemical Test</h2>
               <p className="ml-4 text-sm text-muted-foreground">Refusal can lead to automatic license suspension.</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Do NOT admit / make statements of guilt!</h2>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Do NOT admit guilt!</h2>
               <p className="ml-4 text-sm text-muted-foreground">Exercise your right to remain silent.</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight">- Contact an Attorney Immediately</h2>
-              <p className="ml-4 text-sm text-muted-foreground">If arrested dont post bail. You`&apos;`ll probably be released within hours. Call us right after!</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Contact an Attorney Immediately</h2>
+              <p className="ml-4 text-sm text-muted-foreground">If arrested dont post bail. You&apos;ll probably be released within hours. Call us right after!</p>
             </div>
 
 
@@ -105,10 +113,13 @@ export function DUIDrawerDialog() {
         </DrawerHeader>
 
         <DrawerFooter className="shadow-inner">
-          <Button onClick={handleCallClick}>Call Us!</Button>
-          <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </DrawerClose>
+          <Image src={WallinLogo} alt="logo"  objectFit={'contain'} className="w-full m-auto max-h-16"/>
+          <div className="w-full flex flex-row gap-3">
+            <DrawerClose className="w-full" asChild>
+              <Button variant="outline">Back</Button>
+            </DrawerClose>
+            <Button className="w-full" onClick={handleCallClick}>Call Us!</Button>
+          </div>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
