@@ -23,6 +23,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
+import AccidentImage from "@/public/Accident-Icon.svg"
 import { Separator } from "@/components/ui/separator"
 
 
@@ -63,12 +64,16 @@ export function AccidentsDrawerDialog() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Car Accident?
-            <p className="text-sm text-muted-foreground mt-1 divide-y divide-solid ">Stay calm, follow the list, call us.</p>
+          <DrawerTitle className="text-3xl font-bold">
+            Car Accident?
+            <p className="text-lg text-muted-foreground divide-y divide-solid ">
+              Stay calm, follow the list, call us.
+            </p>
             <Separator className="my-2" />
           </DrawerTitle>
           <DrawerDescription className="overflow-scroll">
 
+          <Image src={AccidentImage} objectFit={'contain'} className="w-full m-auto max-h-19 px-6" alt="Best Accident Lawyer"/>
             <div className="7-steps flex flex-col gap-5 mt-2 mb-4 pb-0 max-h-[55lvh]">
               <div className="step-1 flex flex-col  flex-1 w-full">
                 <span>Step 1</span>

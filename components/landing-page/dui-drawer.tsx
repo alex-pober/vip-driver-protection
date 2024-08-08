@@ -77,7 +77,8 @@ export function DUIDrawerDialog() {
           <DrawerTitle className="text-3xl font-bold">
               Got caught with DUI?
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              In case of being pulled over, remember this.</p>
+              In case of being pulled over, remember this.
+            </p>
             <Separator className="my-2" />
           </DrawerTitle>
           <DrawerDescription className="mt-8 overflow-scroll flex flex-col gap-3">
