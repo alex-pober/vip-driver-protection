@@ -6,6 +6,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
   Carousel,
   CarouselContent,
@@ -34,7 +35,74 @@ import {
 import Image from "next/image";
 import AccidentImage from "@/public/Accident-Icon.svg";
 
-import { Separator } from "@/components/ui/separator";
+
+const AccidentSteps = [
+  {
+    step: "Step 1",
+    title: "Ensure Safety First",
+    disc: "Check for injuries and call 911 immediately if needed."
+  },
+  {
+    step: "Step 2",
+    title: "Move to Safety",
+    disc: "If it's safe, move your vehicle to the side to avoid further accidents."
+  },
+  {
+    step: "Step 3",
+    title: "Stay Visible",
+    disc: "Turn on your hazard lights to alert other drivers."
+  },
+  {
+    step: "Step 4",
+    title: "Call for Help",
+    disc: "Contact the police to report the accident, no matter how minor."
+  },
+  {
+    step: "Step 5",
+    title: "Exchange Info",
+    disc: "Swap contact and insurance details with the other driver(s)."
+  },
+  {
+    step: "Step 6",
+    title: "Capture the Scene",
+    disc: "Take photos of the accident scene, vehicle damage, and license plates."
+  },
+  {
+    step: "Step 7",
+    title: "Stay Neutral",
+    disc: "Avoid admitting fault or discussing the accident details on the spot."
+  },
+  {
+    step: "Step 8",
+    title: "Gather Witness",
+    disc: "Collect contact information and statements from any witnesses."
+  },
+  {
+    step: "Step 9",
+    title: "File a Report",
+    disc: "Ensure a police report is filed for official documentation."
+  },
+  {
+    step: "Step 10",
+    title: "Notify your Insurance",
+    disc: "Report the accident to your insurance company right away."
+  },
+  {
+    step: "Step 11",
+    title: "Seek Medical Attention",
+    disc: "Get a medical check-up, even if you feel fine."
+  },
+  {
+    step: "Step 12",
+    title: "Keep All Records",
+    disc: "Save all documents related to the accident for your records."
+  },
+  {
+    step: "Step 13",
+    title: "Call US, The Lawyers.",
+    disc: "(818) 731-8922 or tap the \"call us\" button below."
+  }
+];
 
 export function AccidentsDrawerDialog() {
   const [open, setOpen] = React.useState(false);
@@ -77,7 +145,7 @@ export function AccidentsDrawerDialog() {
           <DrawerTitle className="text-3xl font-bold">
             Car Accident?
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              Stay calm, follow the list, call us.
+              Stay calm, follow the steps, call us.
             </p>
             <Separator className="my-2" />
             <Image
@@ -95,207 +163,32 @@ export function AccidentsDrawerDialog() {
               align: "start",
             }}
             orientation="horizontal"
-            className=" max-w-[300px] m-auto"
+            className=" max-w-[360px] m-auto p-0"
           >
-            <CarouselContent className="h-[200px]">
-              <CarouselItem key={1} className="basis-1/2">
-                <Card className="mx-1 h-full">
-                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
-                    <Badge variant="outline">Step 1</Badge>
-                    <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
-                      Ensure Safety First
-                    </h4>
-                    <p className="leading-tight mt-3 text-center">
-                      Check for injuries and call 911 immediately if needed.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={2} className="basis-1/2">
-                <Card className="mx-1">
-                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
-                    <Badge variant="outline">Step 2</Badge>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
-                        Move to Safety
+            <CarouselContent className="m-0 mb-4">
+              {AccidentSteps.map((step, index) =>
+                <CarouselItem key={index} className="basis-1/2 p-0">
+                  <Card className="mx-1 h-full border-none shadow-none p-0 m-1">
+                    <CardContent className="flex flex-col items-center align-start p-0 ">
+                      <Badge variant="outline" className="mb-1">{step.step}</Badge>
+                      <h4 className="text-black text-lg font-semibold tracking-tight leading-none text-center">
+                        {step.title}
                       </h4>
                       <p className="leading-tight mt-3 text-center">
-                        If it&apos;s safe, move your vehicle to the side to
-                        avoid further accidents.
+                        {step.disc}
                       </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={3} className="basis-1/2">
-                <Card className="mx-1">
-                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
-                    <Badge variant="outline">Step 2</Badge>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
-                        Move to Safety
-                      </h4>
-                      <p className="leading-tight mt-3 text-center">
-                        If it&apos;s safe, move your vehicle to the side to
-                        avoid further accidents.
-                      </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={4} className="basis-1/2">
-                <Card className="mx-1">
-                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
-                    <Badge variant="outline">Step 2</Badge>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
-                        Move to Safety
-                      </h4>
-                      <p className="leading-tight mt-3 text-center">
-                        If it&apos;s safe, move your vehicle to the side to
-                        avoid further accidents.
-                      </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                )}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+
+            <div>
+              <CarouselPrevious className="left-[-2rem] top-[80%]"/>
+              <CarouselNext className="right-[-2rem] top-[80%]"/>
+            </div>
           </Carousel>
 
-          {/* <div className="7-steps flex flex-col gap-5 mt-2 mb-4 pb-0 max-h-[55lvh]">
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 1</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Ensure Safety First
-                </h4>
-                <p>Check for injuries and call 911 immediately if needed.</p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 2</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Move to Safety
-                </h4>
-                <p>
-                  If it&apos;s safe, move your vehicle to the side to avoid
-                  further accidents.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 3</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Stay Visible
-                </h4>
-                <p>Turn on your hazard lights to alert other drivers.</p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 4</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Call for Help
-                </h4>
-                <p>
-                  Contact the police to report the accident, no matter how
-                  minor.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 5</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Exchange Info
-                </h4>
-                <p>
-                  Swap contact and insurance details with the other driver(s).
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 6</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Capture the Scene
-                </h4>
-                <p>
-                  Take photos of the accident scene, vehicle damage, and license
-                  plates.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 7</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Stay Neutral
-                </h4>
-                <p>
-                  Avoid admitting fault or discussing the accident details on
-                  the spot.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 8</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Gather Witness
-                </h4>
-                <p>
-                  Collect contact information and statements from any witnesses.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 9</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  File a Report
-                </h4>
-                <p>
-                  Ensure a police report is filed for official documentation.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 10</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Notify your Insurance
-                </h4>
-                <p>Report the accident to your insurance company right away.</p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 11</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Seek Medical Attention
-                </h4>
-                <p>Get a medical check-up, even if you feel fine.</p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 12</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Keep All Records
-                </h4>
-                <p>
-                  Save all documents related to the accident for your records.
-                </p>
-              </div>
-
-              <div className="step-1 flex flex-col  flex-1 w-full">
-                <span>Step 13</span>
-                <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                  Call US, The Lawyers.
-                </h4>
-                <p>
-                  (818) 731-8922 or tap the &quot;call us&quot; button below
-                </p>
-              </div>
-
-              {/* <span>
-              After receiving your ticket, our experienced lawyers will review
-              it and get in touch with you promptly. You can then sit back and
-              relax while we take care of everything for you.
-            </span>
-            </div> */}
         </DrawerDescription>
 
         <DrawerFooter className="shadow-inner">
