@@ -3,6 +3,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -93,154 +94,70 @@ export function AccidentsDrawerDialog() {
             opts={{
               align: "start",
             }}
-            orientation="vertical"
-            className="w-full min-h-45 max-h-80 my-14"
+            orientation="horizontal"
+            className=" max-w-[300px] m-auto"
           >
-            <CarouselContent className="h-[300px]">
-              <CarouselItem key={1} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="flex flex-col  flex-1 w-full">
-                      <span>Step 1</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Ensure Safety First
-                      </h4>
-                      <p>
-                        Check for injuries and call 911 immediately if needed.
-                      </p>
-                    </div>
+            <CarouselContent className="h-[200px]">
+              <CarouselItem key={1} className="basis-1/2">
+                <Card className="mx-1 h-full">
+                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
+                    <Badge variant="outline">Step 1</Badge>
+                    <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
+                      Ensure Safety First
+                    </h4>
+                    <p className="leading-tight mt-3 text-center">
+                      Check for injuries and call 911 immediately if needed.
+                    </p>
                   </CardContent>
                 </Card>
               </CarouselItem>
 
-              <CarouselItem key={2} className="basis-1">
+              <CarouselItem key={2} className="basis-1/2">
                 <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 2</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
+                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
+                    <Badge variant="outline">Step 2</Badge>
+                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
                         Move to Safety
                       </h4>
-                      <p>
+                      <p className="leading-tight mt-3 text-center">
                         If it&apos;s safe, move your vehicle to the side to
                         avoid further accidents.
                       </p>
-                    </div>
                   </CardContent>
                 </Card>
               </CarouselItem>
 
-              <CarouselItem key={3} className="basis-1">
+              <CarouselItem key={3} className="basis-1/2">
                 <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
+                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
+                    <Badge variant="outline">Step 2</Badge>
+                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
+                        Move to Safety
                       </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
+                      <p className="leading-tight mt-3 text-center">
+                        If it&apos;s safe, move your vehicle to the side to
+                        avoid further accidents.
+                      </p>
                   </CardContent>
                 </Card>
               </CarouselItem>
 
-              <CarouselItem key={4} className="basis-1">
+              <CarouselItem key={4} className="basis-1/2">
                 <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
+                  <CardContent className="flex flex-col items-center justify-center p-3 aspect-square">
+                    <Badge variant="outline">Step 2</Badge>
+                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight leading-none text-center">
+                        Move to Safety
                       </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
+                      <p className="leading-tight mt-3 text-center">
+                        If it&apos;s safe, move your vehicle to the side to
+                        avoid further accidents.
+                      </p>
                   </CardContent>
                 </Card>
               </CarouselItem>
 
-              <CarouselItem key={5} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
 
-              <CarouselItem key={6} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={7} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={8} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={9} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem key={10} className="basis-1">
-                <Card className="mx-1">
-                  <CardContent className="flex items-center justify-center p-5">
-                    <div className="step-1 flex flex-col  flex-1 w-full">
-                      <span>Step 3</span>
-                      <h4 className="text-black scroll-m-20 text-lg font-semibold tracking-tight">
-                        Stay Visible
-                      </h4>
-                      <p>Turn on your hazard lights to alert other drivers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
