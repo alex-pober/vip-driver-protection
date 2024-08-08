@@ -65,15 +65,6 @@ export function DUIDrawerDialog() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          {/* <DrawerTitle className="rounded-xl flex flex-col bg-[#39474f] p-0 m-[-1rem]">
-            <div className="flex flex-row items-center">
-              <h2 className="min-[374px]:text-lg text-white p-5 pr-0 scroll-m-20 text-xl font-semibold tracking-tight">DUI Defenese by:</h2>
-              <Image src={WallinLogo} alt="logo" objectFit={'contain'} className="w-56 h-16 p-2" />
-            </div>
-              <p className="text-sm text-center text-white divide-y divide-solid py-2 pt-0">
-                In case of being pulled over, remember this.
-              </p>
-          </DrawerTitle> */}
           <DrawerTitle className="text-3xl font-bold">
               Got caught with DUI?
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
@@ -81,7 +72,7 @@ export function DUIDrawerDialog() {
             </p>
             <Separator className="my-2" />
           </DrawerTitle>
-          <DrawerDescription className="mt-8 overflow-scroll flex flex-col gap-3">
+          <DrawerDescription className=" overflow-scroll flex flex-col gap-3">
 
           <Image className="m-auto" src={DUIimage} width={300} height={100} alt="Best DUI Lawyer"/>
             <div>
