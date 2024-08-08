@@ -183,10 +183,9 @@ export function AccidentsDrawerDialog() {
                 )}
             </CarouselContent>
 
-            <div>
-              <CarouselPrevious className="left-[-2rem] top-[80%]"/>
-              <CarouselNext className="right-[-2rem] top-[80%]"/>
-            </div>
+            <CarouselPrevious className="absolute top-[75%] left-0 transform -translate-y-1/5 md:top-[50%]"/>
+            <CarouselNext className="absolute top-[75%] right-0 transform translate-y-1/5 md:top-[50%]"/>
+
           </Carousel>
 
         </DrawerDescription>
