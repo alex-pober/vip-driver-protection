@@ -148,6 +148,7 @@ export function AccidentsDrawerDialog() {
               Stay calm, follow the steps, call us.
             </p>
             <Separator className="my-2" />
+
             <Image
               src={AccidentImage}
               objectFit={"contain"}
