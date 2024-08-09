@@ -63,7 +63,7 @@ export function DUIDrawerDialog() {
           DUI
         </div>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="max-h-dvh">
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-3xl font-bold">
               Got caught with DUI?
@@ -105,7 +105,7 @@ export function DUIDrawerDialog() {
         </DrawerHeader>
 
         <DrawerFooter className="shadow-inner">
-          <Image src={WallinLogo} alt="logo"  objectFit={'contain'} className="w-full m-auto max-h-16"/>
+          <Image src={WallinLogo} alt="logo"  objectFit={'contain'} className="w-full m-auto max-h-8 mb-1"/>
           <div className="w-full flex flex-row gap-3">
             <DrawerClose className="w-full" asChild>
               <Button variant="outline">Back</Button>
