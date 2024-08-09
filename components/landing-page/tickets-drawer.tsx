@@ -3,6 +3,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { Separator } from "../ui/separator";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -76,59 +77,66 @@ export function DrawerDialogDemo() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Traffic Ticket Defenese</DrawerTitle>
+          <DrawerTitle className="text-3xl font-bold">
+              Got traffic ticket?
+            <p className="text-lg text-muted-foreground divide-y divide-solid ">
+              Text us a photo and we&apos;ll go to court for you!
+            </p>
+            <Separator className="my-2" />
+          </DrawerTitle>
+          {/* <DrawerTitle>Traffic Ticket Defenese</DrawerTitle> */}
           <DrawerDescription>
-            <span>
+            {/* <span>
               Fight your traffic tickets keep your driving record clean. Dont
               just settle for a point, fight it!
-            </span>
+            </span> */}
 
-            <div className="3-steps flex flex-row gap-2 mt-4 mb-4">
+            <div className="3-steps flex flex-row mt-4 mb-4">
               <div className="step-1 flex flex-col items-center flex-1 w-full">
-                <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
                   Snap Photo
-                </h4>
+                </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
                   src={SnapIcon}
-                  width={60}
-                  height={60}
+                  width={84}
+                  height={84}
                   className="m-auto"
                 />
               </div>
 
               <div className="step-2 flex flex-col items-center flex-1 w-full">
-                <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                  Text us
-                </h4>
+                <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
+                  Text it
+                </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
                   src={TextusIcon}
-                  width={60}
-                  height={60}
+                  width={84}
+                  height={84}
                   className="m-auto"
                 />
               </div>
 
               <div className="step-3 flex flex-col items-center flex-1 w-full">
-                <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
                   Done
-                </h4>
+                </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
                   src={DoneIcon}
-                  width={60}
-                  height={60}
+                  width={84}
+                  height={84}
                   className="m-auto"
                 />
               </div>
             </div>
 
-            <span>
+            <p className="leading-tight m-4 text-lg text-center">
               After receiving your ticket, our experienced lawyers will review
               it and get in touch with you promptly. You can then sit back and
               relax while we take care of everything for you.
-            </span>
+            </p>
           </DrawerDescription>
         </DrawerHeader>
 

@@ -68,15 +68,15 @@ export function LemonLawDrawerDialog() {
           <DrawerTitle className="text-3xl font-bold">
             Stuck with a lemon?
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              We’ll help you squeeze out a fresh start!</p>
+              We&apos;ll help you squeeze out a fresh start!</p>
             <Separator className="my-2" />
           </DrawerTitle>
           <DrawerDescription className="flex flex-col text-muted-foreground items-center">
             <Image src={LemonTruck} width={300} height={100} alt="Lemon car Lemon Lawyer"/>
-            <h4 className="mt-4 text-black scroll-m-20 text-2xl font-bold tracking-tight">
+            <h4 className="mt-4 text-black scroll-m-20 text-xl font-bold tracking-tight">
                   Lemon Lawyer
             </h4>
-            <p className="leading-7 m-4 text-lg text-center">
+            <p className="leading-tight m-4 text-lg text-center">
                   A lemon lawyer fights to get you the refund, replacement, or compensation you deserve for your defective vehicle so you can drive with confidence!
                </p>
             </DrawerDescription>
