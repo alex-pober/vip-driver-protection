@@ -84,17 +84,12 @@ export function DrawerDialogDemo() {
             </p>
             <Separator className="my-2" />
           </DrawerTitle>
-          {/* <DrawerTitle>Traffic Ticket Defenese</DrawerTitle> */}
           <DrawerDescription>
-            {/* <span>
-              Fight your traffic tickets keep your driving record clean. Dont
-              just settle for a point, fight it!
-            </span> */}
 
             <div className="3-steps flex flex-row mt-4 mb-4">
               <div className="step-1 flex flex-col items-center flex-1 w-full">
                 <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
-                  Snap Photo
+                  Snap ticket
                 </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
@@ -132,7 +127,7 @@ export function DrawerDialogDemo() {
               </div>
             </div>
 
-            <p className="leading-tight m-4 text-lg text-center">
+            <p className="leading-tight m-4 text-lg text-center mb-0">
               After receiving your ticket, our experienced lawyers will review
               it and get in touch with you promptly. You can then sit back and
               relax while we take care of everything for you.
