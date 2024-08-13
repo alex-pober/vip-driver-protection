@@ -1,29 +1,52 @@
 import Image from "next/image";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
-import {DrawerDialogDemo} from "@/components/landing-page/tickets-drawer"
+import { DrawerDialogDemo } from "@/components/landing-page/tickets-drawer";
 import { AccidentsDrawerDialog } from "@/components/landing-page/accidents-drawer";
 import { DUIDrawerDialog } from "@/components/landing-page/dui-drawer";
 import { LemonLawDrawerDialog } from "@/components/landing-page/lemonlaw-drawer";
+import { Button } from "@/components/ui/button";
+import { Phone, MessagesSquare, Mail } from "lucide-react"
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <main className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
+    <main
+      className="h-svh flex flex-col justify-center items-center p-8 min-[390px]:gap-6 gap-4"
       style={{
         paddingTop: "calc(8px + var(--safe-area-inset-top))",
         paddingBottom: "calc(8px + var(--safe-area-inset-bottom))",
         paddingLeft: "calc(8px + var(--safe-area-inset-left))",
-        paddingRight: "calc(8px + var(--safe-area-inset-right))"
+        paddingRight: "calc(8px + var(--safe-area-inset-right))",
       }}
     >
-      <Image alt="logo" src={Logo} width={300} height={300} priority={true} className="drop-shadow-lg mb-4 w-40 min-[390px]:w-60 sm:mt-16"/>
+      <Image
+        alt="logo"
+        src={Logo}
+        width={300}
+        height={300}
+        priority={true}
+        className="drop-shadow-lg mb-4 w-40 min-[390px]:w-60 sm:mt-16"
+      />
       <div className="w-min mt-[-30px] drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.5rem] tracking-tight text-4xl	min-[390px]:text-5xl font-extrabold text-vip-1">
         DRIVER PROTECTION
       </div>
 
+      <div className="flex h-5 items-center">
+        <Button variant="ghost" className="text-vip-5 text-md">
+          <Mail className="mr-2 h-5 w-5" /> Email Us
+        </Button>
+        <Separator orientation="vertical"/>
+        <Button variant="ghost" className="text-vip-5 text-md">
+          <MessagesSquare className="mr-2 h-5 w-5" /> Text Us
+        </Button>
+        <Separator orientation="vertical"/>
+        <Button variant="ghost" className="text-vip-5 text-md">
+          <Phone className="mr-2 h-5 w-5" /> Call Us
+        </Button>
 
+      </div>
       <div className="scroll-smooth overflow-scroll flex flex-col p-2 gap-4 no-scrollbar">
-
         {/* <Link
           href="https://www.ticketfreedom.com"
           target="_blank"
@@ -44,13 +67,13 @@ export default function Home() {
 
         <LemonLawDrawerDialog />
 
+
         <div className="text-xl min-[390px]:text-3xl text-vip-5 font-bold p-3 min-w-80 text-center rounded-full">
-          (818) VIP - 0606
-          <br/>
-          (818) 847 - 0606
+          (818) <span className="tracking-[3px]">VIP</span> - 0606
+          <br />
+          (818) <span className="tracking-[.3px]">847</span> - 0606
         </div>
       </div>
-
     </main>
   );
 }
