@@ -23,12 +23,12 @@ export default function Home() {
       <Image
         alt="logo"
         src={Logo}
-        width={300}
-        height={300}
+        width={150}
+        height={150}
         priority={true}
-        className="drop-shadow-lg mb-4 w-40 min-[390px]:w-60 sm:mt-16"
+        className="drop-shadow-lg mb-4 w-40 min-[390px]:w-48 sm:mt-16"
       />
-      <div className="w-min mt-[-30px] drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.5rem] tracking-tight text-4xl	min-[390px]:text-5xl font-extrabold text-vip-1">
+      <div className="w-min mt-[-30px] drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.2rem] tracking-tight text-4xl	min-[390px]:text-4xl font-extrabold text-vip-1">
         DRIVER PROTECTION
       </div>
 
