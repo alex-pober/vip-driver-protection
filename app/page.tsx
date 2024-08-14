@@ -79,7 +79,7 @@ export default function Home() {
         </div> */}
 
         <div className="text-md min-[390px]:text-md text-vip-5 tracking-tight p-3 text-center rounded-full">
-          VIP Driver Protection: Legal Defense for Every Mile
+          Legal Defense for Every Mile
         </div>
       </div>
     </main>
