@@ -72,10 +72,14 @@ export default function Home() {
 
         <LemonLawDrawerDialog />
 
-        <div className="text-xl min-[390px]:text-3xl text-vip-5 font-bold p-3 min-w-80 text-center rounded-full">
+        {/* <div className="text-xl min-[390px]:text-3xl text-vip-5 font-bold p-3 min-w-80 text-center rounded-full">
           (818) <span className="tracking-[3px]">VIP</span> - 0606
           <br />
           (818) <span className="tracking-[.3px]">847</span> - 0606
+        </div> */}
+
+        <div className="text-md min-[390px]:text-md text-vip-5 tracking-tight p-3 text-center rounded-full">
+          VIP Driver Protection: Legal Defense for Every Mile
         </div>
       </div>
     </main>
