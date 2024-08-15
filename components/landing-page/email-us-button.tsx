@@ -41,28 +41,26 @@ export default function PopoverEmailButton() {
       </PopoverTrigger>
 
       <PopoverContent className="bg-vip-1 ml-2 w-auto">
-        <div className="grid gap-1">
+        <div className="grid gap-3">
           <div className="grid justify-center">
-            <Label className="text-vip-2 m-1 text-lg" htmlFor="English">
-              info@vipdriverprotection.com
-            </Label>
+            <div className="text-lg tracking-wide	"> info@vipdriverprotection.com</div>
           </div>
           <div className="grid grid-cols-2">
             <PopoverClose asChild>
               <Button
                 size="sm"
                 variant="outline"
-                className="text-vip-2 text-md mx-2"
+                className="text-vip-2 text-sm mx-2"
               >
                 Close
               </Button>
             </PopoverClose>
             <Button
               size="sm"
-              className="text-vip-5 text-md mx-2"
+              className="text-vip-5 text-md mx-2 text-sm"
               onClick={handleCopyEmail}
             >
-              <ClipboardCopy className="mr-2 h-5 w-5" /> Copy Email
+              <ClipboardCopy className="mr-2 h-5 w-5 " /> Copy Email
             </Button>
           </div>
         </div>
