@@ -5,7 +5,7 @@ import { AccidentsDrawerDialog } from "@/components/landing-page/accidents-drawe
 import { DUIDrawerDialog } from "@/components/landing-page/dui-drawer";
 import { LemonLawDrawerDialog } from "@/components/landing-page/lemonlaw-drawer";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, ClipboardCopy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import {
@@ -13,11 +13,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { PopoverClose } from "@radix-ui/react-popover";
 import TextUsButton from "@/components/landing-page/text-us-button";
-
+import PopoverEmailButton from "@/components/landing-page/email-us-button";
 export default function Home() {
-
-
   return (
     <main
       className="h-svh flex flex-col justify-center items-center p-8"
@@ -42,13 +41,11 @@ export default function Home() {
       </div>
 
       <div className="flex h-5 items-center m-4">
-        <Button variant="ghost" className="text-vip-5 text-md m-1">
-          <Mail className="mr-2 h-5 w-5" /> Email Us
-        </Button>
+        <PopoverEmailButton />
         <Separator orientation="vertical" />
         <TextUsButton />
         <Separator orientation="vertical" />
-        <PopoverDemo />
+        <PopoverCallUs />
       </div>
 
       <div className="scroll-smooth overflow-scroll flex flex-col p-2 gap-4 no-scrollbar min-w-[350px]">
@@ -86,7 +83,7 @@ export default function Home() {
   );
 }
 
-function PopoverDemo() {
+function PopoverCallUs() {
   return (
     <Popover>
       <PopoverTrigger asChild>

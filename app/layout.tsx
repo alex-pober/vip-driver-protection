@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,10 @@ export default function RootLayout({
         sizes="<generated>"
       />
 
-      <body className={cn(`${inter.className} bg-vip-3`)}>{children}</body>
+      <body className={cn(`${inter.className} bg-vip-3`)}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }
