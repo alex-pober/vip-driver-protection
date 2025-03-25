@@ -27,7 +27,13 @@ import Image from "next/image";
 import SnapIcon from "@/public/snap-photo.svg";
 import TextusIcon from "@/public/textus-photo.svg"
 import DoneIcon from "@/public/done-photo.svg"
-export function DrawerDialogDemo() {
+import { translations } from "@/translations";
+interface DrawerDialogDemoProps {
+  language?: "en" | "es";
+}
+
+export function DrawerDialogDemo({ language = "en" }: DrawerDialogDemoProps = {}) {
+  const t = translations[language];
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -35,16 +41,16 @@ export function DrawerDialogDemo() {
     if (navigator.share) {
       try {
         await navigator.share({
-          text: 'Hello, Please take a look at my traffic ticket and get back to me.',
+          text: t.ticketSmsText,
           url: 'sms:+18189307774'
         });
         console.log('Shared successfully');
       } catch (error) {
         console.error('Sharing failed:', error);
-        window.open('sms:+18189307774?&body=Hello, Please take a look at my traffic ticket and get back to me.');
+        window.open(`sms:+18189307774?&body=${encodeURIComponent(t.ticketSmsText)}`);
       }
     } else {
-      window.open('sms:+18189307774?&body=Hello, Please take a look at my traffic ticket and get back to me.');
+      window.open(`sms:+18189307774?&body=${encodeURIComponent(t.ticketSmsText)}`);
     }
   };
 
@@ -53,7 +59,7 @@ export function DrawerDialogDemo() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-            Tickets
+            {t.tickets}
           </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
@@ -72,15 +78,15 @@ export function DrawerDialogDemo() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-          Tickets
+        {t.tickets}
         </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-3xl font-bold">
-              Got traffic ticket?
+              {t.gotTrafficTicket}
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              Text us a photo and we&apos;ll go to court for you!
+              {t.textUsPhoto}
             </p>
             <Separator className="my-2" />
           </DrawerTitle>
@@ -89,7 +95,7 @@ export function DrawerDialogDemo() {
             <div className="3-steps flex flex-row mt-4 mb-4">
               <div className="step-1 flex flex-col items-center flex-1 w-full">
                 <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
-                  Snap ticket
+                  {t.snapTicket}
                 </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
@@ -102,7 +108,7 @@ export function DrawerDialogDemo() {
 
               <div className="step-2 flex flex-col items-center flex-1 w-full">
                 <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
-                  Text it
+                  {t.textIt}
                 </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
@@ -115,7 +121,7 @@ export function DrawerDialogDemo() {
 
               <div className="step-3 flex flex-col items-center flex-1 w-full">
                 <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
-                  Done
+                  {t.done}
                 </h2>
                 <Image
                   alt="take a picture of your traffic ticket"
@@ -128,17 +134,15 @@ export function DrawerDialogDemo() {
             </div>
 
             <p className="leading-tight m-4 text-lg text-center mb-0">
-              After receiving your ticket, our experienced lawyers will review
-              it and get in touch with you promptly. You can then sit back and
-              relax while we take care of everything for you.
+              {t.afterReceivingTicket}
             </p>
           </DrawerDescription>
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button onClick={handleTextClick}>Text us your traffic ticket</Button>
+          <Button onClick={handleTextClick}>{t.textUsTicket}</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{t.cancel}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

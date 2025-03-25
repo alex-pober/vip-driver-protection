@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/Logo.svg";
 import { DrawerDialogDemo } from "@/components/landing-page/tickets-drawer";
@@ -5,7 +8,7 @@ import { AccidentsDrawerDialog } from "@/components/landing-page/accidents-drawe
 import { DUIDrawerDialog } from "@/components/landing-page/dui-drawer";
 import { LemonLawDrawerDialog } from "@/components/landing-page/lemonlaw-drawer";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, ClipboardCopy } from "lucide-react";
+import { Phone, Mail, ClipboardCopy, Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import {
@@ -16,7 +19,15 @@ import {
 import { PopoverClose } from "@radix-ui/react-popover";
 import TextUsButton from "@/components/landing-page/text-us-button";
 import PopoverEmailButton from "@/components/landing-page/email-us-button";
+import { translations } from "@/translations";
 export default function Home() {
+  const [language, setLanguage] = useState<"en" | "es">("en");
+  const t = translations[language];
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "es" : "en");
+  };
+
   return (
     <main
       className="h-svh flex flex-col justify-center items-center p-8"
@@ -27,6 +38,22 @@ export default function Home() {
         paddingRight: "calc(8px + var(--safe-area-inset-right))",
       }}
     >
+      <div className="flex items-center mb-12 bg-gray-100 rounded-full p-1 shadow-sm">
+        <Button
+          variant={language === "en" ? "default" : "ghost"}
+          className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${language === "en" ? "bg-vip-2 text-vip-5" : "text-gray-500"}`}
+          onClick={() => setLanguage("en")}
+        >
+          English
+        </Button>
+        <Button
+          variant={language === "es" ? "default" : "ghost"}
+          className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${language === "es" ? "bg-vip-2 text-vip-5" : "text-gray-500"}`}
+          onClick={() => setLanguage("es")}
+        >
+          Español
+        </Button>
+      </div>
       <Image
         alt="logo"
         src={Logo}
@@ -37,15 +64,15 @@ export default function Home() {
       />
 
       <div className="w-min  drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.2rem] tracking-tight text-4xl	min-[390px]:text-4xl font-extrabold text-vip-1">
-        DRIVER PROTECTION
+        {t.driverProtection}
       </div>
 
-      <div className="flex h-5 items-center m-4">
-        <PopoverEmailButton />
-        <Separator orientation="vertical" />
-        <TextUsButton />
-        <Separator orientation="vertical" />
-        <PopoverCallUs />
+      <div className="flex items-center justify-center m-4 flex-wrap gap-1">
+        <PopoverEmailButton language={language} />
+        <Separator orientation="vertical" className="h-5 sm:block" />
+        <TextUsButton language={language} />
+        <Separator orientation="vertical" className="h-5 sm:block" />
+        <PopoverCallUs language={language} />
       </div>
 
       <div className="scroll-smooth overflow-scroll flex flex-col p-2 gap-4 no-scrollbar min-w-[350px]">
@@ -61,13 +88,13 @@ export default function Home() {
           </div>
         </Link> */}
 
-        <DrawerDialogDemo />
+        <DrawerDialogDemo language={language} />
 
-        <AccidentsDrawerDialog />
+        <AccidentsDrawerDialog language={language} />
 
-        <DUIDrawerDialog />
+        <DUIDrawerDialog language={language} />
 
-        <LemonLawDrawerDialog />
+        <LemonLawDrawerDialog language={language} />
 
         {/* <div className="text-xl min-[390px]:text-3xl text-vip-5 font-bold p-3 min-w-80 text-center rounded-full">
           (818) <span className="tracking-[3px]">VIP</span> - 0606
@@ -76,19 +103,20 @@ export default function Home() {
         </div> */}
 
         <div className="text-md min-[390px]:text-md text-vip-5 tracking-tight p-3 text-center rounded-full">
-          Legal Defense for Every Mile
+          {t.legalDefense}
         </div>
       </div>
     </main>
   );
 }
 
-function PopoverCallUs() {
+function PopoverCallUs({ language }: { language: "en" | "es" }) {
+  const t = translations[language];
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="ghost" className="text-vip-5 text-md m-1">
-          <Phone className="mr-2 h-5 w-5" /> Call Us
+          <Phone className="mr-2 h-5 w-5" /> {t.callUs}
         </Button>
       </PopoverTrigger>
 
@@ -96,7 +124,7 @@ function PopoverCallUs() {
         <div className="grid gap-1">
           <div className="grid grid-cols-3 items-center">
             <Label className="text-vip-2" htmlFor="English">
-              English
+              {t.english}
             </Label>
             <Button asChild className="text-vip-5 col-span-2">
               <a href="tel:+18189307774">
@@ -107,7 +135,7 @@ function PopoverCallUs() {
           </div>
           <div className="grid grid-cols-3 items-center">
             <Label className="text-vip-2" htmlFor="Spanish">
-              Spanish
+              {t.spanish}
             </Label>
             <Button asChild className="text-vip-5 col-span-2">
               <a href="tel:+18189307774">
@@ -118,7 +146,7 @@ function PopoverCallUs() {
           </div>
           <div className="grid grid-cols-3 items-center">
             <Label className="text-vip-2" htmlFor="Russian">
-              Russian
+              {t.russian}
             </Label>
             <Button asChild className="text-vip-5 col-span-2">
               <a href="tel:+18189307774">
@@ -129,7 +157,7 @@ function PopoverCallUs() {
           </div>
           <div className="grid grid-cols-3 items-center">
             <Label className="text-vip-2" htmlFor="Armenian">
-              Armenian
+              {t.armenian}
             </Label>
             <Button asChild className="text-vip-5 col-span-2">
               <a href="tel:+18189307774">
@@ -140,7 +168,7 @@ function PopoverCallUs() {
           </div>
           <div className="grid grid-cols-3 items-center">
             <Label className="text-vip-2" htmlFor="Farsi">
-              Farsi
+              {t.farsi}
             </Label>
             <Button asChild className="text-vip-5 col-span-2">
               <a href="tel:+18189307774">

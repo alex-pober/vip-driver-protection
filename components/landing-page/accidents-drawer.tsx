@@ -34,77 +34,87 @@ import {
 } from "@/components/ui/drawer";
 import Image from "next/image";
 import AccidentImage from "@/public/Accident-Icon.svg";
+import { translations } from "@/translations";
 
 
-const AccidentSteps = [
-  {
-    step: "Step 1",
-    title: "Ensure Safety First",
-    disc: "Check for injuries and call 911 immediately if needed."
-  },
-  {
-    step: "Step 2",
-    title: "Move to Safety",
-    disc: "If it's safe, move your vehicle to the side to avoid further accidents."
-  },
-  {
-    step: "Step 3",
-    title: "Stay Visible",
-    disc: "Turn on your hazard lights to alert other drivers."
-  },
-  {
-    step: "Step 4",
-    title: "Call for Help",
-    disc: "Contact the police to report the accident, no matter how minor."
-  },
-  {
-    step: "Step 5",
-    title: "Exchange Info",
-    disc: "Swap contact and insurance details with the other driver(s)."
-  },
-  {
-    step: "Step 6",
-    title: "Capture the Scene",
-    disc: "Take photos of the accident scene, vehicle damage, and license plates."
-  },
-  {
-    step: "Step 7",
-    title: "Stay Neutral",
-    disc: "Avoid admitting fault or discussing the accident details on the spot."
-  },
-  {
-    step: "Step 8",
-    title: "Gather Witness",
-    disc: "Collect contact information and statements from any witnesses."
-  },
-  {
-    step: "Step 9",
-    title: "File a Report",
-    disc: "Ensure a police report is filed for official documentation."
-  },
-  {
-    step: "Step 10",
-    title: "Notify your Insurance",
-    disc: "Report the accident to your insurance company right away."
-  },
-  {
-    step: "Step 11",
-    title: "Seek Medical Attention",
-    disc: "Get a medical check-up, even if you feel fine."
-  },
-  {
-    step: "Step 12",
-    title: "Keep All Records",
-    disc: "Save all documents related to the accident for your records."
-  },
-  {
-    step: "Step 13",
-    title: "Call US, The Lawyers.",
-    disc: "(818) 731-8922 or tap the \"call us\" button below."
-  }
-];
+const getAccidentSteps = (language: "en" | "es") => {
+  const t = translations[language];
+  return [
+    {
+      step: `${t.step} 1`,
+      title: t.ensureSafetyFirst,
+      disc: t.ensureSafetyFirstDesc
+    },
+    {
+      step: `${t.step} 2`,
+      title: t.moveToSafety,
+      disc: t.moveToSafetyDesc
+    },
+    {
+      step: `${t.step} 3`,
+      title: t.stayVisible,
+      disc: t.stayVisibleDesc
+    },
+    {
+      step: `${t.step} 4`,
+      title: t.callForHelp,
+      disc: t.callForHelpDesc
+    },
+    {
+      step: `${t.step} 5`,
+      title: t.exchangeInfo,
+      disc: t.exchangeInfoDesc
+    },
+    {
+      step: `${t.step} 6`,
+      title: t.captureTheScene,
+      disc: t.captureTheSceneDesc
+    },
+    {
+      step: `${t.step} 7`,
+      title: t.stayNeutral,
+      disc: t.stayNeutralDesc
+    },
+    {
+      step: `${t.step} 8`,
+      title: t.gatherWitness,
+      disc: t.gatherWitnessDesc
+    },
+    {
+      step: `${t.step} 9`,
+      title: t.fileAReport,
+      disc: t.fileAReportDesc
+    },
+    {
+      step: `${t.step} 10`,
+      title: t.notifyYourInsurance,
+      disc: t.notifyYourInsuranceDesc
+    },
+    {
+      step: `${t.step} 11`,
+      title: t.seekMedicalAttention,
+      disc: t.seekMedicalAttentionDesc
+    },
+    {
+      step: `${t.step} 12`,
+      title: t.keepAllRecords,
+      disc: t.keepAllRecordsDesc
+    },
+    {
+      step: `${t.step} 13`,
+      title: t.callUsTheLawyers,
+      disc: t.callUsTheLawyersDesc
+    }
+  ];
+};
 
-export function AccidentsDrawerDialog() {
+interface AccidentsDrawerDialogProps {
+  language?: "en" | "es";
+}
+
+export function AccidentsDrawerDialog({ language = "en" }: AccidentsDrawerDialogProps = {}) {
+  const t = translations[language];
+  const AccidentSteps = getAccidentSteps(language);
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -137,15 +147,15 @@ export function AccidentsDrawerDialog() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-          Accidents
+          {t.accidents}
         </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-3xl font-bold">
-            Car Accident?
+            {t.carAccident}
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              Stay calm, follow the steps, call us.
+              {t.stayCalm}
             </p>
             <Separator className="my-2" />
 
@@ -192,9 +202,9 @@ export function AccidentsDrawerDialog() {
         </DrawerDescription>
 
         <DrawerFooter className="shadow-inner">
-          <Button onClick={handleCallClick}>Call Us!</Button>
+          <Button onClick={handleCallClick}>{t.callUsExclamation}</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{t.cancel}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

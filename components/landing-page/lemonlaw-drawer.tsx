@@ -26,9 +26,15 @@ import Image from "next/image";
 import WallinLogo from "@/public/wallinLogo.webp"
 import LemonTruck from "@/public/LemonTruck.svg"
 import { Separator } from "@/components/ui/separator"
+import { translations } from "@/translations";
 
 
-export function LemonLawDrawerDialog() {
+interface LemonLawDrawerDialogProps {
+  language?: "en" | "es";
+}
+
+export function LemonLawDrawerDialog({ language = "en" }: LemonLawDrawerDialogProps = {}) {
+  const t = translations[language];
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -60,32 +66,32 @@ export function LemonLawDrawerDialog() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-          Lemon Law
+          {t.lemonLaw}
         </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-3xl font-bold">
-            Stuck with a lemon?
+            {t.stuckWithLemon}
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              We&apos;ll help you squeeze out a fresh start!</p>
+              {t.helpSqueezeStart}</p>
             <Separator className="my-2" />
           </DrawerTitle>
           <DrawerDescription className="flex flex-col text-muted-foreground items-center">
             <Image src={LemonTruck} width={300} height={100} alt="Lemon car Lemon Lawyer"/>
             <h4 className="mt-4 text-black scroll-m-20 text-xl font-bold tracking-tight">
-                  Lemon Lawyer
+                  {t.lemonLawyer}
             </h4>
             <p className="leading-tight m-4 text-lg text-center">
-                  A lemon lawyer fights to get you the refund, replacement, or compensation you deserve for your defective vehicle so you can drive with confidence!
+                  {t.lemonLawyerDesc}
                </p>
             </DrawerDescription>
         </DrawerHeader>
 
         <DrawerFooter className="shadow-inner">
-          <Button onClick={handleCallClick}>Call Us!</Button>
+          <Button onClick={handleCallClick}>{t.callUsExclamation}</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">{t.cancel}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

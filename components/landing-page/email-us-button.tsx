@@ -9,8 +9,14 @@ import {
 } from "@/components/ui/popover";
 import { PopoverClose } from "@radix-ui/react-popover";
 import { useToast } from "@/components/ui/use-toast"
+import { translations } from "@/translations";
 
-export default function PopoverEmailButton() {
+interface PopoverEmailButtonProps {
+  language?: "en" | "es";
+}
+
+export default function PopoverEmailButton({ language = "en" }: PopoverEmailButtonProps = {}) {
+  const t = translations[language];
   const { toast } = useToast()
 
   const handleCopyEmail = () => {
@@ -18,7 +24,7 @@ export default function PopoverEmailButton() {
       .writeText("info@ticketfreedom.com")
       .then(() => {
         toast({
-          description: "Email copied to clipboard!",
+          description: t.emailCopied,
           duration: 1000
         }),
         console.log("Email copied to clipboard!");
@@ -27,7 +33,7 @@ export default function PopoverEmailButton() {
       .catch((err) => {
         console.error("Failed to copy email: ", err);
         toast({
-          description: "Failed to copy email"
+          description: t.failedToCopy
         })
       });
   };
@@ -35,8 +41,8 @@ export default function PopoverEmailButton() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="ghost" className="text-vip-5 text-md m-1">
-          <Mail className="mr-2 h-5 w-5" /> Email Us
+        <Button variant="ghost" className="text-vip-5 text-sm sm:text-md m-1 px-2 sm:px-3">
+          <Mail className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" /> {t.emailUs}
         </Button>
       </PopoverTrigger>
 
@@ -52,7 +58,7 @@ export default function PopoverEmailButton() {
                 variant="outline"
                 className="text-vip-2 text-sm mx-2"
               >
-                Close
+                {t.close}
               </Button>
             </PopoverClose>
             <Button
@@ -60,7 +66,7 @@ export default function PopoverEmailButton() {
               className="text-vip-5 text-md mx-2 text-sm"
               onClick={handleCopyEmail}
             >
-              <ClipboardCopy className="mr-2 h-5 w-5 " /> Copy Email
+              <ClipboardCopy className="mr-2 h-5 w-5 " /> {t.copyEmail}
             </Button>
           </div>
         </div>

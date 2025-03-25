@@ -26,9 +26,15 @@ import Image from "next/image";
 import WallinLogo from "@/public/WallinLogo.svg"
 import DUIimage from "@/public/DUI-image.svg"
 import { Separator } from "@/components/ui/separator"
+import { translations } from "@/translations";
 
 
-export function DUIDrawerDialog() {
+interface DUIDrawerDialogProps {
+  language?: "en" | "es";
+}
+
+export function DUIDrawerDialog({ language = "en" }: DUIDrawerDialogProps = {}) {
+  const t = translations[language];
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -60,15 +66,15 @@ export function DUIDrawerDialog() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-          DUI
+          {t.dui}
         </div>
       </DrawerTrigger>
       <DrawerContent className="max-h-dvh">
         <DrawerHeader className="text-left">
           <DrawerTitle className="text-3xl font-bold">
-              Got caught with DUI?
+              {t.gotCaughtDUI}
             <p className="text-lg text-muted-foreground divide-y divide-solid ">
-              In case of being pulled over, remember this.
+              {t.caseOfPulledOver}
             </p>
             <Separator className="my-2" />
           </DrawerTitle>
@@ -76,28 +82,28 @@ export function DUIDrawerDialog() {
 
           <Image className="m-auto" src={DUIimage} width={300} height={100} alt="Best DUI Lawyer"/>
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Stay Calm and Be Polite</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Being respectful goes a long way.</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.stayCalm2}</h2>
+              <p className="ml-4 text-sm text-muted-foreground">{t.stayCalm2Desc}</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Refuse Field Sobriety Tests</h2>
-              <p className="ml-4 text-sm text-muted-foreground">You are not required to perform these tests.</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.refuseTests}</h2>
+              <p className="ml-4 text-sm text-muted-foreground">{t.refuseTestsDesc}</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Take the Chemical Test</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Refusal can lead to automatic license suspension.</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.takeChemicalTest}</h2>
+              <p className="ml-4 text-sm text-muted-foreground">{t.takeChemicalTestDesc}</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Do NOT admit guilt!</h2>
-              <p className="ml-4 text-sm text-muted-foreground">Exercise your right to remain silent.</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.doNotAdmitGuilt}</h2>
+              <p className="ml-4 text-sm text-muted-foreground">{t.doNotAdmitGuiltDesc}</p>
             </div>
 
             <div>
-              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- Contact an Attorney Immediately</h2>
-              <p className="ml-4 text-sm text-muted-foreground">If arrested dont post bail. You&apos;ll probably be released within hours. Call us right after!</p>
+              <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.contactAttorney}</h2>
+              <p className="ml-4 text-sm text-muted-foreground">{t.contactAttorneyDesc}</p>
             </div>
 
 
@@ -108,9 +114,9 @@ export function DUIDrawerDialog() {
           <Image src={WallinLogo} alt="logo"  objectFit={'contain'} className="w-full m-auto max-h-8 mb-1"/>
           <div className="w-full flex flex-row gap-3">
             <DrawerClose className="w-full" asChild>
-              <Button variant="outline">Back</Button>
+              <Button variant="outline">{t.back}</Button>
             </DrawerClose>
-            <Button className="w-full" onClick={handleCallClick}>Call Us!</Button>
+            <Button className="w-full" onClick={handleCallClick}>{t.callUsExclamation}</Button>
           </div>
         </DrawerFooter>
       </DrawerContent>

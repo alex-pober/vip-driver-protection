@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils"
@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description: "You and your car protected by top lawyers.",
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,13 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="apple-touch-icon"
-        href="/apple-icon?<generated>"
-        type="image/<generated>"
-        sizes="<generated>"
-      />
-
       <body className={cn(`${inter.className} bg-vip-3`)}>
         {children}
         <Toaster />
