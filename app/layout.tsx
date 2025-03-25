@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(`${inter.className} bg-vip-3`)}>
+      <body className={cn(`${inter.className} bg-vip-3 overflow-auto`)}>
         {children}
         <Toaster />
       </body>

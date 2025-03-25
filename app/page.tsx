@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <main
-      className="h-svh flex flex-col justify-center items-center p-8"
+      className="min-h-svh flex flex-col justify-center items-center p-8 overflow-y-auto"
       style={{
         paddingTop: "calc(8px + var(--safe-area-inset-top))",
         paddingBottom: "calc(8px + var(--safe-area-inset-bottom))",
@@ -63,11 +63,17 @@ export default function Home() {
         className="drop-shadow-lg mb-2 w-40 min-[390px]:w-48 sm:mt-16"
       />
 
-      <div className="w-min  drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.2rem] tracking-tight text-4xl	min-[390px]:text-4xl font-extrabold text-vip-1">
-        {t.driverProtection}
+      <div className="drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.2rem] tracking-tight text-4xl	min-[390px]:text-4xl font-extrabold text-vip-1">
+        {language === "en" ? (
+          t.driverProtection.split("\n").map((line, index) => (
+            <div key={index}>{line}</div>
+          ))
+        ) : (
+          t.driverProtection
+        )}
       </div>
 
-      <div className="flex items-center justify-center m-4 flex-wrap gap-1">
+      <div className="flex items-center justify-center m-2 flex-wrap gap-1">
         <PopoverEmailButton language={language} />
         <Separator orientation="vertical" className="h-5 sm:block" />
         <TextUsButton language={language} />
@@ -75,7 +81,7 @@ export default function Home() {
         <PopoverCallUs language={language} />
       </div>
 
-      <div className="scroll-smooth overflow-scroll flex flex-col p-2 gap-4 no-scrollbar min-w-[350px]">
+      <div className="scroll-smooth flex flex-col p-2 gap-4 w-full max-w-md">
         {/* <Link
           href="https://www.ticketfreedom.com"
           target="_blank"

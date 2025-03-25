@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     callUs: "Call Us",
-    driverProtection: "DRIVER PROTECTION",
+    driverProtection: "DRIVER\nPROTECTION",
     legalDefense: "Legal Defense for Every Mile",
     english: "English",
     spanish: "Spanish",
