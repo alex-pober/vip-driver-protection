@@ -45,18 +45,35 @@ export function LemonLawDrawerDialog({ language = "en" }: LemonLawDrawerDialogPr
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild className="bg-[#39474f]">
+        <DialogTrigger asChild>
           <div className="text-xl min-[391px]:text-3xl text-vip-5 bg-vip-2 font-bold outline outline-3 p-3 text-center rounded-full">
-            Tickets
+            {t.lemonLaw}
           </div>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&rsquo;re done.
+        <DialogContent className="sm:max-w-[600px] border-vip-1">
+          <DialogHeader className="text-left">
+            <DialogTitle className="text-3xl font-bold text-vip-2">
+              {t.stuckWithLemon}
+              <p className="text-lg text-muted-foreground">
+                {t.helpSqueezeStart}
+              </p>
+              <Separator className="my-2" />
+            </DialogTitle>
+            <DialogDescription className="flex flex-col text-muted-foreground items-center">
+              <Image src={LemonTruck} width={300} height={100} alt="Lemon car Lemon Lawyer"/>
+              <h4 className="mt-4 text-black scroll-m-20 text-xl font-bold tracking-tight">
+                {t.lemonLawyer}
+              </h4>
+              <p className="leading-tight m-4 text-lg text-center">
+                {t.lemonLawyerDesc}
+              </p>
             </DialogDescription>
           </DialogHeader>
+          
+          <div className="flex justify-end gap-4 mt-4">
+            <Button variant="outline" onClick={() => setOpen(false)}>{t.cancel}</Button>
+            <Button onClick={handleCallClick}>{t.callUsExclamation}</Button>
+          </div>
         </DialogContent>
       </Dialog>
     );

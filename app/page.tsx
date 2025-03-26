@@ -38,7 +38,7 @@ export default function Home() {
         paddingRight: "calc(8px + var(--safe-area-inset-right))",
       }}
     >
-      <div className="flex items-center mb-12 bg-gray-100 rounded-full p-1 shadow-sm">
+      <div className="flex items-center mb-12 bg-vip-1 rounded-full p-1 shadow-sm">
         <Button
           variant={language === "en" ? "default" : "ghost"}
           className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${language === "en" ? "bg-vip-2 text-vip-5" : "text-gray-500"}`}
@@ -64,13 +64,9 @@ export default function Home() {
       />
 
       <div className="drop-shadow text-center leading-[1.9rem] min-[390px]:leading-[2.2rem] tracking-tight text-4xl	min-[390px]:text-4xl font-extrabold text-vip-1">
-        {language === "en" ? (
-          t.driverProtection.split("\n").map((line, index) => (
-            <div key={index}>{line}</div>
-          ))
-        ) : (
-          t.driverProtection
-        )}
+        {t.driverProtection.split("\n").map((line, index) => (
+          <div key={index}>{line}</div>
+        ))}
       </div>
 
       <div className="flex items-center justify-center m-2 flex-wrap gap-1">

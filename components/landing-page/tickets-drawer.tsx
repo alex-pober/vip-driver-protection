@@ -62,13 +62,66 @@ export function DrawerDialogDemo({ language = "en" }: DrawerDialogDemoProps = {}
             {t.tickets}
           </div>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+        <DialogContent className="sm:max-w-[600px] border-vip-1">
+          <DialogHeader className="text-left">
+            <DialogTitle className="text-3xl font-bold text-vip-2">
+              {t.gotTrafficTicket}
+              <p className="text-lg text-muted-foreground">
+                {t.textUsPhoto}
+              </p>
+              <Separator className="my-2" />
+            </DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&rsquo;re done.
+              <div className="3-steps flex flex-row mt-4 mb-4">
+                <div className="step-1 flex flex-col items-center flex-1 w-full">
+                  <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
+                    {t.snapTicket}
+                  </h2>
+                  <Image
+                    alt="take a picture of your traffic ticket"
+                    src={SnapIcon}
+                    width={84}
+                    height={84}
+                    className="m-auto"
+                  />
+                </div>
+
+                <div className="step-2 flex flex-col items-center flex-1 w-full">
+                  <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
+                    {t.textIt}
+                  </h2>
+                  <Image
+                    alt="text us your traffic ticket"
+                    src={TextusIcon}
+                    width={84}
+                    height={84}
+                    className="m-auto"
+                  />
+                </div>
+
+                <div className="step-3 flex flex-col items-center flex-1 w-full">
+                  <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none mb-4">
+                    {t.done}
+                  </h2>
+                  <Image
+                    alt="we'll handle your traffic ticket"
+                    src={DoneIcon}
+                    width={84}
+                    height={84}
+                    className="m-auto"
+                  />
+                </div>
+              </div>
+
+              <p className="leading-tight m-4 text-lg text-center mb-0">
+                {t.afterReceivingTicket}
+              </p>
             </DialogDescription>
           </DialogHeader>
+          <div className="flex justify-end gap-4 mt-4">
+            <Button variant="outline" onClick={() => setOpen(false)}>{t.cancel}</Button>
+            <Button onClick={handleTextClick}>{t.textUsTicket}</Button>
+          </div>
         </DialogContent>
       </Dialog>
     );

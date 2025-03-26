@@ -84,7 +84,7 @@ export const translations = {
   },
   es: {
     callUs: "Llámanos",
-    driverProtection: "PROTECCIÓN DEL CONDUCTOR",
+    driverProtection: "PROTECCIÓN\nDEL CONDUCTOR",
     legalDefense: "Defensa Legal para Cada Milla",
     english: "Inglés",
     spanish: "Español",
