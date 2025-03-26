@@ -120,7 +120,7 @@ export function DrawerDialogDemo({ language = "en" }: DrawerDialogDemoProps = {}
           </DialogHeader>
           <div className="flex justify-end gap-4 mt-4">
             <Button variant="outline" onClick={() => setOpen(false)}>{t.cancel}</Button>
-            <Button onClick={handleTextClick}>{t.textUsTicket}</Button>
+            <Button>{t.textUsTicket}{" "}(818) 930-7774</Button>
           </div>
         </DialogContent>
       </Dialog>

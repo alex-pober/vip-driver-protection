@@ -69,10 +69,10 @@ export function LemonLawDrawerDialog({ language = "en" }: LemonLawDrawerDialogPr
               </p>
             </DialogDescription>
           </DialogHeader>
-          
+
           <div className="flex justify-end gap-4 mt-4">
             <Button variant="outline" onClick={() => setOpen(false)}>{t.cancel}</Button>
-            <Button onClick={handleCallClick}>{t.callUsExclamation}</Button>
+            <Button>{t.callUsExclamation}{" "}(818) 930-7774</Button>
           </div>
         </DialogContent>
       </Dialog>

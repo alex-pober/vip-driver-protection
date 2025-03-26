@@ -61,7 +61,7 @@ export function DUIDrawerDialog({ language = "en" }: DUIDrawerDialogProps = {}) 
             </DialogTitle>
             <DialogDescription className="flex flex-col gap-3">
               <Image className="m-auto" src={DUIimage} width={300} height={100} alt="Best DUI Lawyer"/>
-              
+
               <div>
                 <h2 className="text-black scroll-m-20 text-xl font-semibold tracking-tight leading-none">- {t.stayCalm2}</h2>
                 <p className="ml-4 text-sm text-muted-foreground">{t.stayCalm2Desc}</p>
@@ -88,10 +88,10 @@ export function DUIDrawerDialog({ language = "en" }: DUIDrawerDialogProps = {}) 
               </div>
             </DialogDescription>
           </DialogHeader>
-          
+
           <div className="flex justify-end gap-4 mt-4">
             <Button variant="outline" onClick={() => setOpen(false)}>{t.back}</Button>
-            <Button onClick={handleCallClick}>{t.callUsExclamation}</Button>
+            <Button>{t.callUsExclamation}{" "}(818) 930-7774</Button>
           </div>
         </DialogContent>
       </Dialog>
